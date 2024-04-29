@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <script src="/script/scriptDoador.js"></script>
+</head>
+
+<body>
+    <nav>
+        <img class="logo-nav" src="" alt="">
+        <div>
+            <img class="perguntas" src="" alt="">
+            <img class="perfil" src="" alt="">
+        </div>
+    </nav>
+    <div class="principal">
+        <div class="side">
+
+            <div class="filtros">
+                <div class="search">
+                    <input class="barra-pesquisa" type="text">
+                    <img src="" alt="">
+                </div>
+                <div class="fitro">
+                    <input id="filtro1" type="checkbox">
+                    <label for="filtro1">Filtro 1</label>
+                </div>
+                <div class="fitro">
+                    <input id="filtro2" type="checkbox">
+                    <label for="filtro2">Filtro 2</label>
+                </div>
+                <div class="fitro">
+                    <input id="filtro3" type="checkbox">
+                    <label for="filtro3">Filtro 3</label>
+                </div>
+                <div class="fitro">
+                    <input id="filtro4" type="checkbox">
+                    <label for="filtro4">Filtro 4</label>
+                </div>
+                <div class="fitro">
+                    <input id="filtro5" type="checkbox">
+                    <label for="filtro5">Filtro 5</label>
+                </div>
+            </div>
+        </div>
+        <div class="catalogo">
+            <div class="card-add">
+                <img src="/img/addIcon.png" alt="">
+                <h2>Adicionar produto</h2>
+            </div>
+            <div class="card">
+                <img src="/img/frutas.jpg" alt="">
+                <h2>Descrição</h2>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Adicionar Novo Produto</h2>
+            <form id="addProductForm">
+                <div class="product-image">
+                    <label for="productImage">Imagem do Produto:</label>
+                    <input type="file" required="" id="productImage" name="productImage" accept="image/*" capture="environment">
+                </div>
+                <div class="product-description">
+                    <label for="productDescription">Descrição do Produto:</label>
+                    <input type="text" required="" id="productDescription" name="productDescription" placeholder="Ex: 2kg de cenoura">
+                </div>
+                <button type="submit">Adicionar Produto</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,248 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5d1bc;
+}
+
+/* Página de login */
+.login-content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 97vh;
+}
+
+.descricao-projeto{
+    font-size: 3rem;
+}
+
+.login-container {
+    width: 20%;
+    background-color: #ffffff;
+    padding: 2%;
+    border-radius: 5px;
+    border: 1px solid #000000;
+}
+
+.login-container h2 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 90%;
+    padding: 5%;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #9b9b9c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-group p{
+    font-size: 0.7rem;
+    margin-left: 1%;
+    margin-top: -0.6%;
+}
+
+.form-group button:hover {
+    background-color: #727272;
+}
+
+/* Página de cadastro */
+.body-cadastro{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f5d1bc;
+}
+
+.cadastro-container{
+    margin: 30px;
+    width: 40%;
+    background-color: #ffffff;
+    padding: 2%;
+    border-radius: 5px;
+    border: 1px solid #000000;
+}
+.cadastro-container h2, .botoes{
+    display: flex;
+    justify-content: center;
+}
+
+.form-group-cadastro input {
+    width: 94%;
+    padding: 2.5%;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.botoes{
+    margin-bottom: 30px;
+}
+
+/* Página principal receptor */
+nav{
+    width: 100%;
+    height: 40px;
+    background-color: #f58840;
+}
+
+.principal{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+}
+
+.side{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    background-color:#f5d1bc;
+}
+
+.catalogo{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-content: flex-start;
+    gap: 30px;
+    background-color: #f5ebe5;
+    padding: 1.5% 0.5% 1.5% 3%;
+}
+
+.card{
+    width: 30%;
+    height: 250px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.card img{
+    width: 100%;
+    height: 200px;
+    margin: 0;
+}
+
+.card h2{
+    text-align: center;
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.card p{
+    text-align: center;
+    font-size: 0.7rem;
+    margin: 0;
+}
+
+/* Página principal doador */
+.card-add{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;  
+    width: 30%;
+    height: 250px;
+    border: 1px solid #818181;
+    border-radius: 5px;
+    background-color: #ebe2d9;
+    cursor: pointer;
+}
+
+.card-add img{
+    width: 20%;
+    height: 20%;
+    margin: 0;
+}
+
+.card-add h2{
+    text-align: center;
+    font-size: 1rem;
+    margin: 0;
+    color: #585858;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 12% auto;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    width: 50%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#addProductForm{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#addProductForm input{
+    width: 98%;
+    padding: 5px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+#addProductForm button{
+    width: 100%;
+    padding: 10px;
+    background-color: #9b9b9c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#addProductForm button:hover {
+    background-color: #727272;
+}
