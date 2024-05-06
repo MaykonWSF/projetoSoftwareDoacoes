@@ -24,27 +24,27 @@
             <div class="filtros">
                 <div class="search">
                     <input class="barra-pesquisa" type="text">
-                    <img src="" alt="">
+                    <img class="lupa" src="/img/lupa.png" alt="">
                 </div>
                 <div class="fitro">
                     <input id="filtro1" type="checkbox">
-                    <label for="filtro1">Filtro 1</label>
+                    <label for="filtro1">Frutas</label>
                 </div>
                 <div class="fitro">
                     <input id="filtro2" type="checkbox">
-                    <label for="filtro2">Filtro 2</label>
+                    <label for="filtro2">Verduras</label>
                 </div>
                 <div class="fitro">
                     <input id="filtro3" type="checkbox">
-                    <label for="filtro3">Filtro 3</label>
+                    <label for="filtro3">Legumes</label>
                 </div>
                 <div class="fitro">
                     <input id="filtro4" type="checkbox">
-                    <label for="filtro4">Filtro 4</label>
+                    <label for="filtro4">Não Perecíveis</label>
                 </div>
                 <div class="fitro">
                     <input id="filtro5" type="checkbox">
-                    <label for="filtro5">Filtro 5</label>
+                    <label for="filtro5">Outros</label>
                 </div>
             </div>
         </div>
@@ -68,6 +68,17 @@
                 <div class="product-description">
                     <label for="productDescription">Descrição do Produto:</label>
                     <input type="text" required="" id="productDescription" name="productDescription" placeholder="Ex: 2kg de cenoura">
+                </div>
+                <div class="product-filter">
+                    <label for="productFilter">Categoria do Produto:</label>
+                    <select id="productFilter" required="" name="productFilter">
+                        <option value="0">Selecionar</option>
+                        <option value="1">Frutas</option>
+                        <option value="2">Verduras</option>
+                        <option value="3">Legumes</option>
+                        <option value="4">Não Perecíveis</option>
+                        <option value="5">Outros</option>
+                    </select>
                 </div>
                 <button type="submit">Adicionar Produto</button>
             </form>
