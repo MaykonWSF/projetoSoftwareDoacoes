@@ -81,9 +81,15 @@ body {
     border-radius: 5px;
     border: 1px solid #000000;
 }
+
 .cadastro-container h2, .botoes{
     display: flex;
     justify-content: center;
+}
+
+.botao-selecionado {
+    background-color: #aaaaaa;
+    color: white;
 }
 
 .form-group-cadastro input {

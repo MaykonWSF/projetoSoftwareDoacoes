@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var modal = document.getElementById("modal");
-    var btn = document.querySelector(".card-add");
-    var span = document.getElementsByClassName("close")[0];
-    var form = document.getElementById("addProductForm");
+    let modal = document.getElementById("modal");
+    let btn = document.querySelector(".card-add");
+    let span = document.getElementsByClassName("close")[0];
+    let form = document.getElementById("addProductForm");
 
     btn.onclick = function() {
         modal.style.display = "block";
