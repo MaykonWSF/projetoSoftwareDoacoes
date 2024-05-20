@@ -63,22 +63,41 @@
             <form id="addProductForm">
                 <div class="product-image">
                     <label for="productImage">Imagem do Produto:</label>
-                    <input type="file" required="" id="productImage" name="productImage" accept="image/*" capture="environment">
+                    <input type="file" required="" id="productImage" name="productImage" accept="image/*"
+                        capture="environment">
                 </div>
                 <div class="product-description">
                     <label for="productDescription">Descrição do Produto:</label>
-                    <input type="text" required="" id="productDescription" name="productDescription" placeholder="Ex: 2kg de cenoura">
+                    <input type="text" required="" id="productDescription" name="productDescription"
+                        placeholder="Ex: cenoura, melancia, farinha de trigo...">
                 </div>
-                <div class="product-filter">
-                    <label for="productFilter">Categoria do Produto:</label>
-                    <select id="productFilter" required="" name="productFilter">
-                        <option value="0">Selecionar</option>
-                        <option value="1">Frutas</option>
-                        <option value="2">Verduras</option>
-                        <option value="3">Legumes</option>
-                        <option value="4">Não Perecíveis</option>
-                        <option value="5">Outros</option>
-                    </select>
+                <div class="product-quantity">
+                    <label for="productQuantity">Quantidade do Produto:</label>
+                    <input type="number" required="" id="productQuantity" name="productQuantity" placeholder="Ex: 5, 3.5, 7.750 ...">
+                </div>
+                <div class="selects">
+                    <div class="product-unity">
+                        <label for="productUnity">Unidade de Medida:</label>
+                        <select id="productUnity" required="" name="productUnity">
+                            <option value="0">Selecionar</option>
+                            <option value="1">Unidade</option>
+                            <option value="2">Kg</option>
+                            <option value="3">Litro</option>
+                            <option value="4">Pacote</option>
+                            <option value="5">Outros</option>
+                        </select>
+                    </div>
+                    <div class="product-filter">
+                        <label for="productFilter">Categoria do Produto:</label>
+                        <select id="productFilter" required="" name="productFilter">
+                            <option value="0">Selecionar</option>
+                            <option value="1">Frutas</option>
+                            <option value="2">Verduras</option>
+                            <option value="3">Legumes</option>
+                            <option value="4">Não Perecíveis</option>
+                            <option value="5">Outros</option>
+                        </select>
+                    </div>
                 </div>
                 <button type="submit">Adicionar Produto</button>
             </form>

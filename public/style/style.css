@@ -237,7 +237,7 @@ nav div img{
 
 .modal-content {
     background-color: #fefefe;
-    margin: 10% auto;
+    margin: 9% auto;
     padding: 20px;
     border: 1px solid #000000;
     border-radius: 5px;
@@ -260,7 +260,7 @@ nav div img{
 #addProductForm{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
 #addProductForm input{
@@ -271,8 +271,14 @@ nav div img{
     border-radius: 5px;
 }
 
+.selects{
+    display: flex;
+    gap: 10%;
+}
+
 #addProductForm button{
     width: 100%;
+    margin-top: 15px;
     padding: 10px;
     background-color: #9b9b9c;
     color: white;
