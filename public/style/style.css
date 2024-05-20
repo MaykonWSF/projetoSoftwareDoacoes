@@ -128,6 +128,10 @@ nav div img{
     height: 25px;
 }
 
+.perfil{
+    cursor: pointer;
+}
+
 .principal{
     display: flex;
     flex-direction: row;
@@ -195,6 +199,83 @@ nav div img{
     margin: 0;
 }
 
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#updateProfileForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#updateProfileForm input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#updateProfileForm button {
+    padding: 10px;
+    background-color: #f58840;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#updateProfileForm button:hover {
+    background-color: #e07e34;
+}
+
+.success-message {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4caf50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
 /* Página principal doador */
 .card-add{
     display: flex;
@@ -223,40 +304,6 @@ nav div img{
     color: #585858;
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 9% auto;
-    padding: 20px;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    width: 50%;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover, .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
 #addProductForm{
     display: flex;
     flex-direction: column;
@@ -280,7 +327,7 @@ nav div img{
     width: 100%;
     margin-top: 15px;
     padding: 10px;
-    background-color: #9b9b9c;
+    background-color: #f58840;
     color: white;
     border: none;
     border-radius: 5px;
@@ -288,5 +335,5 @@ nav div img{
 }
 
 #addProductForm button:hover {
-    background-color: #727272;
+    background-color: #e07e34;
 }
