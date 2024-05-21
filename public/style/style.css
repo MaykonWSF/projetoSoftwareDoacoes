@@ -136,7 +136,7 @@ nav div img{
     display: flex;
     flex-direction: row;
     width: 100%;
-    min-height: 100vh;
+    min-height: 93vh;
     height: auto;
 }
 
@@ -200,26 +200,25 @@ nav div img{
 }
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none; 
+    position: fixed; 
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
     padding-top: 60px;
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 5% auto; /* 15% from the top and centered */
+    margin: 5% auto; 
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    max-width: 600px;
+    width: 50%; 
     border-radius: 10px;
 }
 
@@ -264,7 +263,7 @@ nav div img{
 }
 
 .success-message {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     bottom: 20px;
     left: 50%;
@@ -274,6 +273,63 @@ nav div img{
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#modal-produto .modal-content {
+    margin-top: 3%;
+    width: 60%;
+}
+
+.info-produto {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.info-produto img {
+    width: 60%;
+    border-radius: 10px;
+}
+
+.detalhes-produto {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.detalhes-produto h2 {
+    margin: 0;
+    font-size: 1.6em;
+    color: #333;
+}
+
+.detalhes-produto p {
+    margin: 0;
+    font-size: 1em;
+    color: #666;
+}
+
+.detalhes-produto p strong {
+    color: #333;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f58840;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #e07e34;
 }
 
 /* Página principal doador */

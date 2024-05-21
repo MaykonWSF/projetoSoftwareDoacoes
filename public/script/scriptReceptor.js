@@ -2,10 +2,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // Abrir e fechar o modal de perfil
     let modalPerfil = document.getElementById("modal");
     let btnPerfil = document.getElementsByClassName("perfil")[0];
-    let spanPerfil = document.getElementsByClassName("close")[0];
+    let spanPerfil = modalPerfil.getElementsByClassName("close")[0];
     let formPerfil = document.getElementById("updateProfileForm");
     let successMessage = document.getElementById("success-message");
-
 
     btnPerfil.onclick = function() {
         modalPerfil.style.display = "block";
@@ -37,6 +36,42 @@ document.addEventListener("DOMContentLoaded", function() {
         // Ocultar a mensagem de sucesso após 3 segundos
         setTimeout(function() {
             successMessage.style.display = "none";
-        }, 1000);
+        }, 3000);
     }
+
+    // Abrir e fechar o modal de produto
+    let modalProduto = document.getElementById("modal-produto");
+    let spanProduto = modalProduto.getElementsByClassName("close")[0];
+
+    spanProduto.onclick = function() {
+        modalProduto.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modalProduto) {
+            modalProduto.style.display = "none";
+        }
+    }
+
+    // Exibir informações do produto ao clicar no card
+    let cards = document.querySelectorAll(".card");
+    cards.forEach(function(card) {
+        card.onclick = function() {
+            let produtoNome = card.querySelector("h2").innerText;
+            let produtoImg = card.querySelector("img").src;
+            let produtoQuantidade = "10 unidades"; // Adicione a lógica para buscar a quantidade disponível
+            let produtoDoador = card.querySelector("p").innerText;
+            let produtoTelefone = "(11) 1234-5678"; // Adicione a lógica para buscar o telefone do doador
+            let produtoEndereco = "Rua Exemplo, 123"; // Adicione a lógica para buscar o endereço do doador
+
+            document.querySelector("#modal-produto .info-produto img").src = produtoImg;
+            document.querySelector("#modal-produto .detalhes-produto h2").innerText = produtoNome;
+            document.querySelector("#modal-produto .quantidade-produto .value").innerHTML = produtoQuantidade;
+            document.querySelector("#modal-produto .doador-produto .value").innerHTML = produtoDoador;
+            document.querySelector("#modal-produto .telefone-produto .value").innerHTML = produtoTelefone;
+            document.querySelector("#modal-produto .endereco-produto .value").innerHTML = produtoEndereco;
+
+            modalProduto.style.display = "block";
+        }
+    });
 });
