@@ -314,7 +314,8 @@ nav div img{
     color: #666;
 }
 
-.detalhes-produto p strong {
+.detalhes-produto p strong,
+.reserva-produto label {
     color: #333;
 }
 
@@ -331,6 +332,46 @@ button {
 
 button:hover {
     background-color: #e07e34;
+}
+
+#botao-reservar {
+    margin-top: 10px;
+}
+
+.detalhes-secundarios {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.reserva-produto {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#quantidadeReserva, #dataReserva {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button.confirmar {
+    background-color: #4caf50; /* Verde para confirmar */
+}
+
+button.confirmar:hover {
+    background-color: #45a049;
+}
+
+#botao-cancelar {
+    margin-top: -5px;
+    background-color: #e74c3c; /* Vermelho para cancelar */
+}
+
+#botao-cancelar:hover {
+    background-color: #c0392b;
 }
 
 /* Página principal doador */

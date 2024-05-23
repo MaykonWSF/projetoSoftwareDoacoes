@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Abrir e fechar o modal de perfil
-    let modalPerfil = document.getElementById("modal");
+    let modalPerfil = document.getElementById("modal-perfil");
     let btnPerfil = document.getElementsByClassName("perfil")[0];
     let spanPerfil = modalPerfil.getElementsByClassName("close")[0];
     let formPerfil = document.getElementById("updateProfileForm");
@@ -39,22 +39,60 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 3000);
     }
 
-    // Abrir e fechar o modal de produto
-    let modalProduto = document.getElementById("modal-produto");
-    let spanProduto = modalProduto.getElementsByClassName("close")[0];
+    // Modal para exibir informações do produto
+    let modalInfoProduto = document.getElementById("modal-produto");
+    let spanInfoProduto = modalInfoProduto.getElementsByClassName("close")[0];
+    let btnReservarProduto = modalInfoProduto.querySelector("#botao-reservar");
+    let btnCancelarReserva = modalInfoProduto.querySelector("#botao-cancelar");
+    let reservaProdutoDiv = modalInfoProduto.querySelector(".reserva-produto");
+    let detalhesSecundariosDiv = modalInfoProduto.querySelector(".detalhes-secundarios");
+    let isReservarMode = true;
 
-    spanProduto.onclick = function() {
-        modalProduto.style.display = "none";
+    spanInfoProduto.onclick = function() {
+        modalInfoProduto.style.display = "none";
+        resetModal();
     }
 
     window.onclick = function(event) {
-        if (event.target == modalProduto) {
-            modalProduto.style.display = "none";
+        if (event.target == modalInfoProduto) {
+            modalInfoProduto.style.display = "none";
+            resetModal();
         }
     }
 
+    btnReservarProduto.onclick = function() {
+        if (isReservarMode) {
+            // Mudar para o modo de confirmação
+            reservaProdutoDiv.style.display = "block";
+            detalhesSecundariosDiv.style.display = "none";
+            btnReservarProduto.innerText = "Confirmar";
+            btnReservarProduto.classList.add("confirmar");
+            btnCancelarReserva.style.display = "block";
+            isReservarMode = false;
+        } else {
+            const quantidadeReserva = document.getElementById("quantidadeReserva").value;
+            const dataReserva = document.getElementById("dataReserva").value;
+            alert(`Reserva confirmada!\nQuantidade: ${quantidadeReserva}\nData e Hora: ${dataReserva}`);
+            modalInfoProduto.style.display = "none";
+            resetModal();
+        }
+    }
+
+    btnCancelarReserva.onclick = function() {
+        resetModal();
+    }
+
+    function resetModal() {
+        reservaProdutoDiv.style.display = "none";
+        detalhesSecundariosDiv.style.display = "flex";
+        btnReservarProduto.innerText = "Reservar";
+        btnReservarProduto.classList.remove("confirmar");
+        btnCancelarReserva.style.display = "none";
+        isReservarMode = true;
+    }
+
     // Exibir informações do produto ao clicar no card
-    let cards = document.querySelectorAll(".card");
+    let cards = document.querySelectorAll(".catalogo .card");
     cards.forEach(function(card) {
         card.onclick = function() {
             let produtoNome = card.querySelector("h2").innerText;
@@ -66,12 +104,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
             document.querySelector("#modal-produto .info-produto img").src = produtoImg;
             document.querySelector("#modal-produto .detalhes-produto h2").innerText = produtoNome;
-            document.querySelector("#modal-produto .quantidade-produto .value").innerHTML = produtoQuantidade;
-            document.querySelector("#modal-produto .doador-produto .value").innerHTML = produtoDoador;
-            document.querySelector("#modal-produto .telefone-produto .value").innerHTML = produtoTelefone;
-            document.querySelector("#modal-produto .endereco-produto .value").innerHTML = produtoEndereco;
+            document.querySelector("#modal-produto .quantidade-produto .value").innerText = produtoQuantidade;
+            document.querySelector("#modal-produto .doador-produto .value").innerText = produtoDoador;
+            document.querySelector("#modal-produto .telefone-produto .value").innerText = produtoTelefone;
+            document.querySelector("#modal-produto .endereco-produto .value").innerText = produtoEndereco;
 
-            modalProduto.style.display = "block";
+            modalInfoProduto.style.display = "block";
         }
     });
 });
