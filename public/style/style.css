@@ -179,6 +179,7 @@ nav div img{
     border: 1px solid #000000;
     border-radius: 5px;
     background-color: #ffffff;
+    cursor: pointer;
 }
 
 .card img{
@@ -379,6 +380,24 @@ button:hover {
     gap: 10%;
 }
 
+#addProductForm select{
+    width: 40%;
+    padding: 5px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+#addProductForm select:hover{
+    cursor: pointer;
+    background-color: #cacaca;
+}
+
+.select-container{
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
 #addProductForm button{
     width: 100%;
     margin-top: 15px;
@@ -392,4 +411,13 @@ button:hover {
 
 #addProductForm button:hover {
     background-color: #e07e34;
+}
+
+#botao-remover {
+    background-color: #e74c3c;
+    margin-top: 10px;
+}
+
+#botao-remover:hover {
+    background-color: #c0392b;
 }

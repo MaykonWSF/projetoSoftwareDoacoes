@@ -59,10 +59,10 @@ document.addEventListener("DOMContentLoaded", function() {
         card.onclick = function() {
             let produtoNome = card.querySelector("h2").innerText;
             let produtoImg = card.querySelector("img").src;
-            let produtoQuantidade = "10 unidades"; // Adicione a lógica para buscar a quantidade disponível
+            let produtoQuantidade = "...";
             let produtoDoador = card.querySelector("p").innerText;
-            let produtoTelefone = "(11) 1234-5678"; // Adicione a lógica para buscar o telefone do doador
-            let produtoEndereco = "Rua Exemplo, 123"; // Adicione a lógica para buscar o endereço do doador
+            let produtoTelefone = "...";
+            let produtoEndereco = "...";
 
             document.querySelector("#modal-produto .info-produto img").src = produtoImg;
             document.querySelector("#modal-produto .detalhes-produto h2").innerText = produtoNome;

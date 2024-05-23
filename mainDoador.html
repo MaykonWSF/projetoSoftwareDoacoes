@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Principal</title>
     <link rel="stylesheet" href="/style/style.css">
-    <script src="/script/scriptDoador.js"></script>
-    <link rel="stylesheet" href="/style/style.css">
+    <script src="/script/scriptDoador.js" defer></script>
 </head>
 
 <body>
@@ -20,7 +19,6 @@
     </nav>
     <div class="principal">
         <div class="side">
-
             <div class="filtros">
                 <div class="search">
                     <input class="barra-pesquisa" type="text">
@@ -50,35 +48,39 @@
         </div>
         <div class="catalogo">
             <div class="card-add">
-                <img src="img/addIcon.png" alt="">
+                <img src="/img/addIcon.png" alt="">
                 <h2>Adicionar produto</h2>
+            </div>
+            <!-- Exemplo de produto -->
+            <div class="card">
+                <img src="/img/frutas.jpg" alt="">
+                <h2>Exemplo de Produto</h2>
+                <p>10 Kg</p> <!-- Exemplo de quantidade -->
             </div>
         </div>
     </div>
 
-    <div id="modal" class="modal">
+    <div id="modal-add-produto" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Adicionar Novo Produto</h2>
             <form id="addProductForm">
                 <div class="product-image">
                     <label for="productImage">Imagem do Produto:</label>
-                    <input type="file" required="" id="productImage" name="productImage" accept="image/*"
-                        capture="environment">
+                    <input type="file" required id="productImage" name="productImage" accept="image/*" capture="environment">
                 </div>
                 <div class="product-description">
                     <label for="productDescription">Descrição do Produto:</label>
-                    <input type="text" required="" id="productDescription" name="productDescription"
-                        placeholder="Ex: cenoura, melancia, farinha de trigo...">
+                    <input type="text" required id="productDescription" name="productDescription" placeholder="Ex: cenoura, melancia, farinha de trigo...">
                 </div>
                 <div class="product-quantity">
                     <label for="productQuantity">Quantidade do Produto:</label>
-                    <input type="number" required="" id="productQuantity" name="productQuantity" placeholder="Ex: 5, 3.5, 7.750 ...">
+                    <input type="number" required id="productQuantity" name="productQuantity" placeholder="Ex: 5, 3.5, 7.750 ...">
                 </div>
                 <div class="selects">
-                    <div class="product-unity">
+                    <div class="product-unity select-container">
                         <label for="productUnity">Unidade de Medida:</label>
-                        <select id="productUnity" required="" name="productUnity">
+                        <select id="productUnity" required name="productUnity">
                             <option value="0">Selecionar</option>
                             <option value="1">Unidade</option>
                             <option value="2">Kg</option>
@@ -87,9 +89,9 @@
                             <option value="5">Outros</option>
                         </select>
                     </div>
-                    <div class="product-filter">
+                    <div class="product-filter select-container">
                         <label for="productFilter">Categoria do Produto:</label>
-                        <select id="productFilter" required="" name="productFilter">
+                        <select id="productFilter" required name="productFilter">
                             <option value="0">Selecionar</option>
                             <option value="1">Frutas</option>
                             <option value="2">Verduras</option>
@@ -104,7 +106,7 @@
         </div>
     </div>
 
-    <div id="modal" class="modal">
+    <div id="modal-perfil" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Atualizar informações de usuário</h2>
@@ -119,6 +121,36 @@
     </div>
     <!-- Mensagem de sucesso na atualização -->
     <div id="success-message" class="success-message">Informações atualizadas com sucesso!</div>
+
+    <!-- Modal para exibir informações do produto -->
+    <div id="modal-produto" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="info-produto">
+                <img src="" alt="">
+                <div class="detalhes-produto">
+                    <h2></h2>
+                    <div class="quantidade-produto">
+                        <p><strong>Quantidade:</strong></p>
+                        <p class="value"></p>
+                    </div>
+                    <div class="doador-produto">
+                        <p><strong>Doador:</strong></p>
+                        <p class="value"></p>
+                    </div>
+                    <div class="telefone-produto">
+                        <p><strong>Telefone:</strong></p>
+                        <p class="value"></p>
+                    </div>
+                    <div class="endereco-produto">
+                        <p><strong>Endereço:</strong></p>
+                        <p class="value"></p>
+                    </div>
+                    <button id="botao-remover">Remover</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 
