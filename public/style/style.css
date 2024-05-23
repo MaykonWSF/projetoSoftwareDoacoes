@@ -88,7 +88,7 @@ body {
 }
 
 .botao-selecionado {
-    background-color: #aaaaaa;
+    background-color: #e07e34;
     color: white;
 }
 
@@ -102,6 +102,8 @@ body {
 
 .botoes{
     margin-bottom: 30px;
+    gap: 1%;
+    margin-top: -10px;
 }
 
 /* Página principal receptor */
@@ -250,7 +252,7 @@ nav div img{
     border-radius: 5px;
 }
 
-#updateProfileForm button {
+#updateProfileForm button{
     padding: 10px;
     background-color: #f58840;
     color: white;
@@ -358,7 +360,7 @@ button:hover {
 }
 
 button.confirmar {
-    background-color: #4caf50; /* Verde para confirmar */
+    background-color: #4caf50; 
 }
 
 button.confirmar:hover {
@@ -367,7 +369,7 @@ button.confirmar:hover {
 
 #botao-cancelar {
     margin-top: -5px;
-    background-color: #e74c3c; /* Vermelho para cancelar */
+    background-color: #e74c3c; 
 }
 
 #botao-cancelar:hover {
