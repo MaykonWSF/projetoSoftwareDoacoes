@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const data = {
                 nome: formData.get('nome'),
                 email: formData.get('email'),
+                confirmacaoEmail: formData.get('confirmacao-email'),
                 senha: formData.get('senha'),
                 confirmacaoSenha: formData.get('confirmacao-senha'),
                 telefone: formData.get('telefone'),
@@ -69,12 +70,6 @@ document.addEventListener('DOMContentLoaded', function () {
             };
 
             console.log('Dados a serem enviados:', data); // Log dos dados a serem enviados
-
-            // Verificação básica de senha
-            if (data.senha !== data.confirmacaoSenha) {
-                alert('As senhas não coincidem');
-                return;
-            }
 
             fetch('/api/cadastro', {
                 method: 'POST',

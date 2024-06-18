@@ -1,14 +1,26 @@
 const { verificarUsuarioUnico, inserirUsuario } = require('./dao/usuarioDAO');
 
 const cadastrarUsuario = (req, res) => {
-    const { nome, email, senha, telefone, endereco, perfilUsuario, nomeOrganizacao } = req.body;
+    const { nome, email, confirmacaoEmail, senha, confirmacaoSenha, telefone, endereco, perfilUsuario, nomeOrganizacao } = req.body;
 
     console.log('Dados recebidos:', req.body); // Log dos dados recebidos
 
     // Validação básica dos dados recebidos
-    if (!nome || !email || !senha || !telefone || !endereco || !perfilUsuario) {
+    if (!nome || !email || !confirmacaoEmail || !senha || !confirmacaoSenha || !telefone || !endereco || !perfilUsuario) {
         console.log('Erro: Todos os campos obrigatórios devem ser preenchidos'); // Log do erro
         return res.status(400).json({ error: 'Todos os campos obrigatórios devem ser preenchidos' });
+    }
+
+    // Verificação básica de email
+    if (email !== confirmacaoEmail) {
+        console.log('Erro: Os emails não coincidem'); // Log do erro
+        return res.status(400).json({ error: 'Os emails não coincidem' });
+    }
+
+    //Verificação básica de senha
+    if (senha !== confirmacaoSenha) {
+        console.log('Erro: As senhas não coincidem'); // Log do erro
+        return res.status(400).json({ error: 'As senhas não coincidem' });
     }
 
     // Verificação se email e telefone são únicos (já existem no banco)
