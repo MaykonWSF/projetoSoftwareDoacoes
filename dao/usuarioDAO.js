@@ -12,8 +12,8 @@ const verificarUsuarioUnico = (email, telefone, callback) => {
 
 const inserirUsuario = (usuario, callback) => {
   const query = `
-    INSERT INTO Usuarios (nome, email, senha, telefone, endereco, perfilUsuario, nomeOrganizacao, dataCadastro)
-    VALUES (?, ?, ?, ?, ?, ?, ?, NOW())
+    INSERT INTO Usuarios (nome, email, senha, telefone, endereco, perfilUsuario, nomeOrganizacao, dataCadastro,lastEdit)
+    VALUES (?, ?, ?, ?, ?, ?, ?, NOW(), NOW())
   `;
   const { nome, email, senha, telefone, endereco, perfilUsuario, nomeOrganizacao } = usuario;
   connection.query(
