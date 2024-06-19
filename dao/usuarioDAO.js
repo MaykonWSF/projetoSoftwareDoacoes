@@ -15,10 +15,10 @@ const inserirUsuario = (usuario, callback) => {
     INSERT INTO Usuarios (nome, email, senha, telefone, endereco, perfilUsuario, nomeOrganizacao, dataCadastro,lastEdit)
     VALUES (?, ?, ?, ?, ?, ?, ?, NOW(), NOW())
   `;
-  const { nome, email, senha, telefone, endereco, perfilUsuario, nomeOrganizacao } = usuario;
+  const { nome, email, senhaEncriptada, telefone, endereco, perfilUsuario, nomeOrganizacao } = usuario;
   connection.query(
     query,
-    [nome, email, senha, telefone, endereco, perfilUsuario, nomeOrganizacao],
+    [nome, email, senhaEncriptada, telefone, endereco, perfilUsuario, nomeOrganizacao],
     (err, results) => {
       if (err) {
         return callback(err, null);

@@ -1,4 +1,5 @@
 const { verificarUsuarioUnico, inserirUsuario } = require('./dao/usuarioDAO');
+const bcrypt = require('bcrypt');
 
 const cadastrarUsuario = (req, res) => {
     const { nome, email, confirmacaoEmail, senha, confirmacaoSenha, telefone, endereco, perfilUsuario, nomeOrganizacao } = req.body;
@@ -23,6 +24,10 @@ const cadastrarUsuario = (req, res) => {
         return res.status(400).json({ error: 'As senhas não coincidem' });
     }
 
+    //Encriptação da senha usando bcrypt
+    const saltRounds = 10;
+    const senhaEncriptada = bcrypt.hashSync(senha, saltRounds);
+
     // Verificação se email e telefone são únicos (já existem no banco)
     verificarUsuarioUnico(email, telefone, (err, results) => {
         if (err) {
@@ -35,7 +40,7 @@ const cadastrarUsuario = (req, res) => {
         }
 
         // Inserção dos dados no banco
-        const usuario = { nome, email, senha, telefone, endereco, perfilUsuario, nomeOrganizacao };
+        const usuario = { nome, email, senhaEncriptada, telefone, endereco, perfilUsuario, nomeOrganizacao };
         inserirUsuario(usuario, (err, results) => {
             if (err) {
                 console.log('Erro ao cadastrar usuário:', err); // Log do erro
