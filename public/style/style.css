@@ -127,7 +127,10 @@ nav div{
 
 nav div img{
     width: 20%;
-    height: 25px;
+}
+
+.logo-nav{
+    width: 45%;
 }
 
 .perfil{
