@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'foodConnect/CSS/style.css' %}">
+    <script src="{% static 'foodConnect/js/scriptReceptor.js' %}" defer></script>
+</head>
+
+<body>
+    <nav>
+        <div>
+        <img class="logo-nav" src="{% get_media_prefix %}images/FoodConnect.png" alt="">
+        </div>
+        <div>
+            <img class="perguntas" src="{% get_media_prefix %}images/pergunta.png" alt="">
+            <img class="perfil" src="{% get_media_prefix %}images/perfil-de-usuario.png" alt="">
+        </div>
+    </nav>
+    <div class="principal">
+        <div class="side">
+            <div class="filtros">
+                <div class="search">
+                    <input class="barra-pesquisa" type="text">
+                    <img class="lupa" src="{% get_media_prefix %}images/lupa.png" alt="">
+                </div>
+                <div class="fitro">
+                    <input id="filtro1" type="checkbox">
+                    <label for="filtro1">Frutas</label>
+                </div>
+                <div class="fitro">
+                    <input id="filtro2" type="checkbox">
+                    <label for="filtro2">Verduras</label>
+                </div>
+                <div class="fitro">
+                    <input id="filtro3" type="checkbox">
+                    <label for="filtro3">Legumes</label>
+                </div>
+                <div class="fitro">
+                    <input id="filtro4" type="checkbox">
+                    <label for="filtro4">Não Perecíveis</label>
+                </div>
+                <div class="fitro">
+                    <input id="filtro5" type="checkbox">
+                    <label for="filtro5">Outros</label>
+                </div>
+            </div>
+        </div>
+        <div class="catalogo">
+            <div class="card">
+                <img src="{% get_media_prefix %}images/abacaxi.jpg" alt="">
+                <h2>Abacaxi</h2>
+                <p>Vitória Atacadista</p>
+            </div>
+            <div class="card">
+                <img src="{% get_media_prefix %}images/batata.jpg" alt="">
+                <h2>Batata inglesa</h2>
+                <p>Supermercado Carvalho</p>
+            </div>
+            <div class="card">
+                <img src="{% get_media_prefix %}images/pepino.jpeg" alt="">
+                <h2>Pepino</h2>
+                <p>Banca do José</p>
+            </div>
+            <div class="card">
+                <img src="{% get_media_prefix %}images/melao.jpg" alt="">
+                <h2>Melão</h2>
+                <p>Assaí Atacadista</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-perfil" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Atualizar informações de usuário</h2>
+            <form id="updateProfileForm">
+                <input type="text" id="nome" placeholder="Nome">
+                <input type="text" id="telefone" placeholder="Telefone">
+                <input type="text" id="endereco" placeholder="Endereço">
+                <input type="text" id="organizacao" placeholder="Nome da Organização">
+                <button type="submit">Atualizar</button>
+            </form>
+        </div>
+    </div>
+    <!-- Mensagem de sucesso na atualização -->
+    <div id="success-message" class="success-message">Informações atualizadas com sucesso!</div>
+
+    <!-- Modal para exibir informações do produto -->
+    <div id="modal-produto" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="info-produto">
+                <img src="" alt="">
+                <div class="detalhes-produto">
+                    <h2></h2>
+                    <div class="detalhes-secundarios">
+                        <div class="quantidade-produto">
+                            <p><strong>Quantidade:</strong></p>
+                            <p class="value"></p>
+                        </div>
+                        <div class="doador-produto">
+                            <p><strong>Doador:</strong></p>
+                            <p class="value"></p>
+                        </div>
+                        <div class="telefone-produto">
+                            <p><strong>Telefone:</strong></p>
+                            <p class="value"></p>
+                        </div>
+                        <div class="endereco-produto">
+                            <p><strong>Endereço:</strong></p>
+                            <p class="value"></p>
+                        </div>
+                    </div>
+                    <div class="reserva-produto" style="display:none;">
+                        <div>
+                            <label for="quantidadeReserva"><strong>Quantidade a Reservar:</strong></label>
+                            <input type="number" id="quantidadeReserva" placeholder="Digite a quantidade">
+                        </div>
+                        <div>
+                            <label for="dataReserva"><strong>Data e Hora de Retirada:</strong></label>
+                            <input type="datetime-local" id="dataReserva">
+                        </div>
+                    </div>
+                    <button id="botao-reservar">Reservar</button>
+                    <button id="botao-cancelar" style="display: none;">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

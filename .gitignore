@@ -1,1 +1,7 @@
-connection.js
+.vscode/
+myenv/
+__pycache__/
+*.py[cod]
+*.log
+*.tmp
+.env

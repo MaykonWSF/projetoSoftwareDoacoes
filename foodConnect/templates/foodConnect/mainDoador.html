@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'foodConnect/CSS/style.css' %}">
+    <script src="{% static 'foodConnect/js/scriptDoador.js' %}" defer></script>
+</head>
+
+<body>
+    <nav>
+        <div>
+        <img class="logo-nav" src="{% get_media_prefix %}images/FoodConnect.png" alt="">
+        </div>
+        <div>
+            <img class="perguntas" src="{% get_media_prefix %}images/pergunta.png" alt="">
+            <img class="perfil" src="{% get_media_prefix %}images/perfil-de-usuario.png" alt="">
+        </div>
+    </nav>
+
+    <div class="principal">
+        <div class="side">
+            <div class="filtros">
+                <div class="search">
+                    <input class="barra-pesquisa" type="text">
+                    <img class="lupa" src="{% get_media_prefix %}images/lupa.png" alt="Lupa">
+                </div>
+                <div class="filtro">
+                    <input id="filtro1" type="checkbox">
+                    <label for="filtro1">Frutas</label>
+                </div>
+                <div class="filtro">
+                    <input id="filtro2" type="checkbox">
+                    <label for="filtro2">Verduras</label>
+                </div>
+                <div class="filtro">
+                    <input id="filtro3" type="checkbox">
+                    <label for="filtro3">Legumes</label>
+                </div>
+                <div class="filtro">
+                    <input id="filtro4" type="checkbox">
+                    <label for="filtro4">Não Perecíveis</label>
+                </div>
+                <div class="filtro">
+                    <input id="filtro5" type="checkbox">
+                    <label for="filtro5">Outros</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="catalogo">
+            <div class="card-add">
+                <img src="{% get_media_prefix %}images/addIcon.png" alt="Adicionar">
+                <h2>Adicionar produto</h2>
+            </div>
+            <div class="card">
+                <img src="{% get_media_prefix %}images/frutas.jpg" alt="Produto">
+                <h2>Exemplo de Produto</h2>
+                <p>10 Kg</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-add-produto" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Adicionar Novo Produto</h2>
+            <form id="addProductForm">
+                <div class="product-image">
+                    <label for="productImage">Imagem do Produto:</label>
+                    <input type="file" required id="productImage" name="productImage" accept="image/*" capture="environment">
+                </div>
+                <div class="product-description">
+                    <label for="productDescription">Descrição do Produto:</label>
+                    <input type="text" required id="productDescription" name="productDescription" placeholder="Ex: cenoura, melancia, farinha de trigo...">
+                </div>
+                <div class="product-quantity">
+                    <label for="productQuantity">Quantidade do Produto:</label>
+                    <input type="number" required id="productQuantity" name="productQuantity" placeholder="Ex: 5, 3.5, 7.750 ...">
+                </div>
+                <div class="selects">
+                    <div class="product-unity select-container">
+                        <label for="productUnity">Unidade de Medida:</label>
+                        <select id="productUnity" required name="productUnity">
+                            <option value="0">Selecionar</option>
+                            <option value="1">Unidade</option>
+                            <option value="2">Kg</option>
+                            <option value="3">Litro</option>
+                            <option value="4">Pacote</option>
+                            <option value="5">Outros</option>
+                        </select>
+                    </div>
+                    <div class="product-filter select-container">
+                        <label for="productFilter">Categoria do Produto:</label>
+                        <select id="productFilter" required name="productFilter">
+                            <option value="0">Selecionar</option>
+                            <option value="1">Frutas</option>
+                            <option value="2">Verduras</option>
+                            <option value="3">Legumes</option>
+                            <option value="4">Não Perecíveis</option>
+                            <option value="5">Outros</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit">Adicionar Produto</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-perfil" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Atualizar informações de usuário</h2>
+            <form id="updateProfileForm">
+                <input type="text" id="nome" placeholder="Nome">
+                <input type="text" id="telefone" placeholder="Telefone">
+                <input type="text" id="endereco" placeholder="Endereço">
+                <input type="text" id="organizacao" placeholder="Nome da Organização">
+                <button type="submit">Atualizar</button>
+            </form>
+        </div>
+    </div>
+    <div id="success-message" class="success-message">Informações atualizadas com sucesso!</div>
+
+    <div id="modal-produto" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="info-produto">
+                <img src="" alt="">
+                <div class="detalhes-produto">
+                    <h2></h2>
+                    <div class="quantidade-produto">
+                        <p><strong>Quantidade:</strong></p>
+                        <p class="value"></p>
+                    </div>
+                    <div class="doador-produto">
+                        <p><strong>Doador:</strong></p>
+                        <p class="value"></p>
+                    </div>
+                    <div class="telefone-produto">
+                        <p><strong>Telefone:</strong></p>
+                        <p class="value"></p>
+                    </div>
+                    <div class="endereco-produto">
+                        <p><strong>Endereço:</strong></p>
+                        <p class="value"></p>
+                    </div>
+                    <button id="botao-remover">Remover</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
